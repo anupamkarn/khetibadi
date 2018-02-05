@@ -1,2 +1,11 @@
 /.idea
 /node_modules
+
+/.image1
+/views/shop/images
+
+/.image2
+/views/shop/image
+
+/.image3
+/views/shop/img

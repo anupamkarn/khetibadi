@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style>
+body{
+  width:100%;
+  background-size: cover;
+}
+.container{
+  width:80%;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  box-shadow: 2px 7px 17 px -2px; 
+  margin:auto;
+  padding:16px;
+}
+</style>
+  
+</head>
+<body background="calci.png">
+  <div class="container">  
+  <form >
+  <div style="text-align: center;">
+    <h4>DATA: 30 kg fertilizer is needed in 1 m² area.</h4>
+  </div><br> 
+  Weight of seed(in kg): <input type="number" name="seed" value="" id="n1"><br><br>
+  Area of field(in m²): <input type="number" name="area" value="" id="n2"><br><br>
+  Rate of seed(in rs/kg): <input type="number" name="srate" value="" id="n3"><br><br>
+  Fertilizer needed(in kg/m²): <input type="number" name="frt" value="" id="ft"><br><br>
+  Rate of Fertilizer(in rs/kg): <input type="number" name="ratef" value="" id="n4"><br><br>
+  Market price of Production (in rs/kg): <input type="number" name="ratep" value="" id="mp"><br><br>
+  Rate of production in field(in kg/m²): <input type="number" name="rptf" value="" id="rp"><br><br>
+  Type of soil: <select name="soil" id="sl">
+    <option value="10">Red-Yellow soil</option>
+    <option value="20">Red-sandy soil</option>
+    <option value="30">Black soil</option>
+    <option value="40">Laterite soil</option>
+  </select>
+  <input type="submit" value="Submit" onclick="myFunction()" style="margin:0px 15px;">
+  </form> 
+  </div>
+<br>
+<p> </p>
+<p id="i1">2</p>
+<p id="i2"></p>
+<p id="i3"></p>
+<p id="i4"></p>
+<p id="i5"></p>
+<p id="i6"></p>
+<p id="i7"></p>
+<script>
+  var x,y,z,s,f,ft;
+function myFunction() {
+ x=(document.getElementById("n1").value);
+ y=(document.getElementById("n2").value);
+ z=(document.getElementById("sl").value);
+ s=(document.getElementById("n3").value);
+ f=(document.getElementById("n4").value);
+ ft=(document.getElementById("ft").value);
+
+  var isd=x*s;
+  document.write("Investement in seed:"+ isd + "Rs<br>"); 
+  var fnd=ft*y;
+  document.write("fertilizer needed in given area:"+ fnd + "Kg<br>");
+  var ift=f*fnd;
+  document.write("Investement in fertilizer:"+ ift + "Rs<br>");
+  var tin=isd+ift;
+  document.write("Total Investement :"+ tin + "Rs<br>");
+  var tp=rp*y;
+  document.write("total production: "+ tp + "Kg<br>");
+  var tppr=mp*tp;
+  document.write("total production market price: "+ tppr + "Rs<br>");
+  var bnft=tppr-tin;
+  document.write("total benifit:"+ bnft+ "Rs<br>");
+}
+</script>
+</body>
+</html>

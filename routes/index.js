@@ -18,6 +18,10 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/home', function(req,res,next){
+    res.render('shop/home', {layout:false});
+})
+
 router.get('/add-to-cart/:id', function(req, res, next) {
     var productId = req.params.id;
     var cart = new Cart(req.session.cart ? req.session.cart : {});
@@ -75,7 +79,7 @@ router.post('/checkout', isLoggedIn, function(req, res, next) {
     var cart = new Cart(req.session.cart);
     
     var stripe = require("stripe")(
-        "sk_test_fwmVPdJfpkmwlQRedXec5IxR"
+        "sk_test_oIHs9hqwBVVK4yw4uuqhJiW3"
     );
 
     stripe.charges.create({
